@@ -48,7 +48,7 @@ function withdrawRemainedCRO(address factoryOwner) external {
 
 # 2. Smart Contract Update: Withdrawal Functions (Presale/contracts/Pool.sol)
 Objective
-Enhance the security and flexibility of the emergencyWithdrawContribution and withdrawRemainedCRO functions in the smart contract.
+Enhance the security and flexibility of the emergencyWithdrawContribution in the smart contract.
 ```
   function emergencyWithdrawContribution() external {
         uint256 amount = contributionOf[msg.sender];
@@ -69,6 +69,3 @@ function emergencyWithdrawContribution() external {
         payable(msg.sender).transfer(amount);
 }
 ```
-## Summary of Changes
-* **withdrawRemainedCRO:**
-Modified the function to accept an 'address' parameter ("factoryOwner") for more flexible and dynamic withdrawal of the remaining CRO balance, allowing the specification of the recipient address at the time of withdrawal instead of using a fixed address.
